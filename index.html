@@ -21,7 +21,7 @@
 </head>
 <body class="bg-gray-50 min-h-screen">
     <!-- Sign In section -->
-<section id="login-section" class="flex items-center justify-center min-h-screen">
+    <section id="login-section" class="flex items-center justify-center min-h-screen">
         <div class="bg-white p-10 rounded-2xl shadow-xl w-full max-w-md border border-gray-100">
             <div class="text-center mb-8">
                 <img src="./assets/github-logo.png" class="w-20 mx-auto mb-4">
@@ -55,7 +55,26 @@
             </div>
         </div>
     </section>
-  <!-- external JS -->
-  <script src="./script.js"></script>
+
+    <main id="main-section" class="hidden animate-fadeIn">
+    <!-- Navbar -->
+    <nav class="navbar bg-white shadow-md px-4 md:px-12 lg:px-24 sticky top-0 z-50">
+            <div class="flex-1">
+                <img class="w-12" src="./assets/github-logo.png" alt="">
+                <h2 class="text-[30px] font-bold  tracking-tighter ml-6">
+                    GitHub Issues Tracker
+                </h2>
+            </div>
+            <div class="flex-none gap-2">
+                <div class="join">
+                    <input type="text" id="search-input" placeholder="Search issues..." class="input input-bordered join-item w-32 md:w-64" />
+                    <button onclick="handleSearch()" class="btn btn-primary join-item">Search</button>
+                </div>
+            </div>
+    </nav>
+    
+    </main>
+    <!-- external JS -->
+    <script src="./script.js"></script>
 </body>
 </html>
