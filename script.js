@@ -70,8 +70,7 @@ const cardContent = `
                 
                 <div class="flex flex-wrap gap-2 mb-4">
                     <span class="px-2 py-1 bg-gray-100 text-[10px] rounded text-gray-600 font-medium">${singleIssue.status}</span>
-                    <span class="px-2 py-1 bg-gray-100 text-[10px] rounded text-gray-600 font-medium">${singleIssue.lavels}</span>
-                    <span class="px-2 py-1 bg-yellow-50 text-[10px] rounded text-yellow-700 font-medium">${singleIssue.lavels}</span>
+                    <span class="px-2 py-1 text-[10px] rounded text-gray-600 font-medium bg-[#d977066b]">${singleIssue.labels}</span>
                 </div>
 
                 <div class="mt-4 pt-3 border-t flex justify-between items-center text-[10px] text-gray-400">
@@ -158,13 +157,12 @@ async function showIssueDetails(issueId) {
         </div>
         
         <div class="flex gap-1">
-        <p>${info.status}</p>
-        <p>* Opened by ${info.author}</p>
-        <p>* ${new Date(info.createdAt).toLocaleString()}</p>
+        <p class="bg-green-500 px-1 rounded-xl">${info.status}ed</p>
+        <p>🟣 Opened by ${info.author}</p>
+        <p>🟣 ${new Date(info.createdAt).toLocaleString()}</p>
         </div>
-        <div class="flex gap-4">
-        <p>${info.lavels}</p>
-        <p>${info.lavels}</p>
+        <div class="flex gap-4 m-3">
+        <p class="bg-[#d977066b] p-1 rounded-full">${info.labels}</p>
         </div>
         <div class="space-y-4">
             <p class="text-[#64748B] leading-relaxed bg-gray-50 p-4 rounded-xl italic">"${info.description}"</p>
@@ -172,7 +170,7 @@ async function showIssueDetails(issueId) {
             <div class="bg-[#F8FAFC] grid grid-cols-1 md:grid-cols-2 gap-4 text-[16px] font-bold mt-6 p-3 border rounded-lg justify-between">
                 <div><span class="font-bold text-primary">Assignee:</span></br> ${info.author}</div>
 
-                <div><span class="font-bold text-primary">Priority:</span></br> ${info.priority}</div>
+                <div"><span class="font-bold text-primary">Priority:</span></br> ${info.priority}</div>
 
             </div>
         </div>
@@ -197,12 +195,13 @@ function toggleSpinner(show) {
 
 //Changing the active button style
 function updateActiveButton(activeId) {
-
     const buttons = document.querySelectorAll('.tab-btn');
     buttons.forEach(function(btn) {
-        btn.classList.remove('btn-primary', 'text-white');
+        btn.classList.remove('btn-primary', 'text-white', 'bg-blue-600');
     });
 
     const targetBtn = document.getElementById(`btn-${activeId}`);
-    targetBtn.classList.add('btn-primary', 'text-white');
+    if (targetBtn) {
+        targetBtn.classList.add('bg-blue-600', 'text-white');
+    }
 }
