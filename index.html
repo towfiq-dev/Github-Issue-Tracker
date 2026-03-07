@@ -74,12 +74,14 @@
     </nav>
 
     <div class="container mx-auto p-4 md:p-8 lg:px-24">
+
         <!-- button -->
         <div class="flex flex-wrap p-6 rounded-2xl bg-[#FFFFFF] gap-3 mb-5 mt-5">
             <button onclick="filterIssues('all')" id="btn-all" class="tab-btn btn btn-outline btn-sm px-8 rounded-full border-2 transition-all duration-300">All</button>
             <button onclick="filterIssues('open')" id="btn-open" class="tab-btn btn btn-outline btn-sm px-8 rounded-full border-2 transition-all duration-300">Open</button>
             <button onclick="filterIssues('closed')" id="btn-closed" class="tab-btn btn btn-outline btn-sm px-8 rounded-full border-2 transition-all duration-300">Closed</button>
         </div>
+
         <!-- Issues Summary -->
         <div class="flex items-center justify-between bg-white p-4 rounded-xl shadow-sm mb-8 border border-gray-100">
             <div class="flex items-center gap-3">
@@ -100,7 +102,15 @@
         </div>
     </div>
 
-    
+    <!-- Loading Spinner -->
+    <div id="loading-spinner" class="hidden flex justify-center items-center my-20">
+        <div class="flex flex-col items-center gap-3">
+            <span class="loading loading-spinner loading-lg text-primary"></span>
+            <p class="text-gray-500 animate-pulse">Loading data, please wait...</p>
+        </div>
+    </div>
+        <div id="issue-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        </div>
     </div>
     
     </main>
