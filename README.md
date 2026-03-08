@@ -1,129 +1,31 @@
-# 🌟 Welcome To (সহজ সরল সিম্পল) Assignment - 5
+# JavaScript Essentials: Q&A
 
-# **📅 Deadline For 60 marks:** 9th March, 2026 (11:59 pm ⏱️)  
-#  📅 No Deadline For 50 marks  
-# **📅 Deadline For 30 marks:** Any time after 9th March.
+### 1. What is the difference between var, let, and const?
+* **var**: Function-scoped and can be re-declared or updated. It is hoisted to the top of its scope.
+* **let**: Block-scoped (only available within `{}`). It can be updated but not re-declared in the same scope.
+* **const**: Also block-scoped. It cannot be updated or re-declared; it is used for variables that should remain constant.
 
----
+### 2. What is the spread operator (...)?
+The spread operator allows you to quickly copy all or part of an existing array or object into another array or object. It "spreads" the elements or properties, making it useful for merging data or passing array elements as individual arguments to a function.
+* **Example**: 
+* const arr1 = [1,2,3];
+* const arr2 = [...arr1, 4,5];
+* console.log(arr2)
 
-# Assignment-05: GitHub Issues Tracker
+### 3. What is the difference between map(), filter(), and forEach()?
+* **forEach()**: Iterates over an array to perform an action for each element. It does not return a new array.
+* **map()**: Iterates through an array and returns a **new** array containing the results of a function applied to every element.
+* **filter()**: Checks every element against a condition and returns a **new** array containing only the elements that pass that condition.
 
+### 4. What is an arrow function?
+An arrow function is a compact way to write functions in JavaScript. It uses the `=>` syntax and does not have its own `this` context, which makes it very useful for short, one-line operations or callback functions.
+* **Example**: 
+* const add = (a,b) => a + b;
+* console.log(add(2, 3));
 
-### **API Endpoints:**
-###  **All Issues:** 
-  - https://phi-lab-server.vercel.app/api/v1/lab/issues 
-
-
-###  **Single Issue:**
-   - https://phi-lab-server.vercel.app/api/v1/lab/issue/{id}
-
-   - Example: https://phi-lab-server.vercel.app/api/v1/lab/issue/33
-
-
-###  **Search Issue:** https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q={searchText}
-
-   - Example:  https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=notifications
-
-
----
-
-## 📝 Main Requirements
-
-## 🎨 Design Part
-
-## Login Page
-- Create a login page containing a logo, title, and sub-title
-- Below that, there will be 2 inputs, a sign-in button, and a demo credential to sign in. Follow the Figma for this page 
-- Styled as per Figma
-
-## Main Page: 
-
-### Navbar: 
-
-- Navbar with website logo/name on the left
-- Search input and button on the right
-
-### Tab Section like Figma: 
-
-- 3 tab ( All, Open, Closed) at the top of this section.(**All**, **Open**, **Closed**)
-
-- Below the tab, there will be an icon, the issue count, some text on the left, and an open and closed marker on the right
-
-- Responsiveness: The website should be responsive for mobile devices. It is totally up to you. 
-
-
---- 
-
-
-## ⚙️ Functionalities
-- In login page, there will be default admin credentials (username, password). You need to sign in using these credentials.
-
-- Load all issues and display as per Figma
-
-- On clicking on an open or closed tab, it will load the issues data of the related tab and show it in a display-like card in a 4-column layout like Figma. By default, it will show all data 
-
-- Each card shows:
-  - Title
-  - Description
-  - Status
-  - Category
-  - Author
-  - Priority
-  - Label
-  - CreatedAt
-- Clicking on a tree name in a card will open a modal and show all the information about that Issue. 
-
-### 🚀 Challenges
-
-
-- Show the card Top border based on their category(open, closed), open card will have Green Boder, closed card will have a purple border on top. 
-
-- Loading spinner on data load
-
-- Show active button on changing category names
-
-- Implement Search Functionality and 8 meaningful github commit.  
-
-- Create a readme file and answer this question on your own. Don’t copy-paste from Google or any AI chatbot. 
-    - 1️⃣ What is the difference between var, let, and const?
-    - 2️⃣ What is the spread operator (...)?
-    - 3️⃣ What is the difference between map(), filter(), and forEach()?
-    - 4️⃣ What is an arrow function?
-    - 5️⃣ What are template literals?
-
-
----
-
-## 🛠️ Technology Stack
-
-- **HTML**
-- **CSS** (Vanilla/Tailwind/DaisyUI)
-- **JavaScript** (Vanilla)
-
----
-
-## 🔑 Demo Credentials
-
-```text
-Username: admin
-Password: admin123
-```
-
-
----
-
-### Optional: 
- - No need to show status: Open, Closed styles On modals. 
- - No Need to show icon on labels 
- - No need to apply styles on Priority 
---- 
-
-
-## 📤 What to submit
-
-- **GitHub Repository Link:**
-- **Live Site Link:**
-
----
-
-
+### 5. What are template literals?
+Template literals are strings enclosed in backticks (`` ` ``) instead of quotes. They allow for easy multi-line strings and "string interpolation," where you can embed variables or expressions directly into the string using `${expression}`.
+* **Example**:
+* const firstName = 'Towfiqul';
+* const lastName = 'Islam';
+* console.log(`${firstName} ${lastName}`)
