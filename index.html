@@ -59,7 +59,7 @@
                 <button onclick="handleLogin()" class="btn btn-primary w-full mt-4 text-lg">Sign In</button>
 
                 <p class="text-[18px] font-semibold text-center">
-                    - - - - - - - - - - - - - OR - - - - - - - - - - - - -
+                - - - - - - - - - - - - OR - - - - - - - - - - - -
                 </p>
 
             </div>
@@ -67,7 +67,6 @@
             <div class="mt-3 p-4 bg-blue-50 rounded-lg border border-blue-100 text-center">
                 <p class="text-4 text-black-500 mt-1"><span class="font-bold">User: </span>admin</p>
                 <p class="text-4 text-black-500 mt-1"><span class="font-bold">Pass: </span>admin123</p>
-
             </div>
         </div>
     </section>
@@ -75,37 +74,43 @@
     <main id="main-section" class="hidden animate-fadeIn">
 
         <!-- Navbar -->
-        <nav class="navbar bg-white shadow-md px-4 md:px-12 lg:px-24 sticky top-0 z-50">
-            <div class="flex-1">
-                <img class="w-12" src="./assets/github-logo.png" alt="">
-                <h2 class="text-[30px] font-bold  tracking-tighter ml-6">
+        <nav class="navbar bg-white shadow-md px-4 md:px-12 lg:px-24 sticky top-0 z-50 py-3">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-center w-full gap-4 md:gap-0">
+        <div class="flex-1 flex items-center justify-between md:justify-start w-full">
+        <div class="flex items-center">
+                <img class="w-8 md:w-10 lg:w-12" src="./assets/github-logo.png" alt="">
+                <h2 class="text-xl md:text-2xl lg:text-[30px] font-bold tracking-tighter ml-3 md:ml-6 whitespace-nowrap">
                     GitHub Issues Tracker
                 </h2>
             </div>
-            <div class="flex-none gap-2">
-                <div class="join">
-                    <input type="text" id="search-input" placeholder="Search issues..."
-                        class="input input-bordered join-item w-32 md:w-64" />
-                    <button onclick="handleSearch()" class="btn btn-primary join-item gap-2">
+            <div class="md:hidden flex-1 text-right">
+                <button class="btn btn-primary btn-sm px-2 font-bold hover:scale-105 transition-transform duration-200 uppercase text-[12px]">+ New Issue</button>
+            </div>
+        </div>
+            <div class="flex-none flex flex-row items-center justify-between md:justify-end gap-2 w-full md:w-auto">
+                <div class="join w-full md:w-auto">
+                    <input type="text" id="search-input" placeholder="Search issues..." class="input input-bordered join-item w-full md:w-48 lg:w-64 input-sm md:input-md" />
+                    <button onclick="handleSearch()" class="btn btn-primary join-item btn-sm md:btn-md">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
-                        <span>Search</span>
+                        <span class="hidden sm:inline">Search</span>
                     </button>
                 </div>
-                <div class="ml-5">
-                    <button class="text-[16px] btn btn-primary join-item">+ New Issue</button>
+                <div class="hidden md:block ml-2 lg:ml-5">
+                    <button class="btn btn-primary btn-sm md:btn-md">+ New Issue</button>
                 </div>
             </div>
+        </div>
         </nav>
 
         <!-- Container -->
-        <div class="container mx-auto p-4 md:p-8 lg:px-24">
-
+        <section class="container mx-auto p-4 md:p-8 lg:px-24">
+            <div><p class="text-[26px] font-bold">All Issues</p></div>
             <!-- button -->
-            <div class="flex flex-wrap p-6 rounded-2xl bg-[#FFFFFF] gap-3 mb-5 mt-5">
+            <div class="flex flex-wrap p-6 rounded-2xl bg-[#FFFFFF] gap-3 mb-5 mt-3">
                 <button onclick="filterIssues('all')" id="btn-all"
                     class="tab-btn btn btn-outline btn-sm px-8 rounded-full border-2 transition-all duration-300">All</button>
                 <button onclick="filterIssues('open')" id="btn-open"
@@ -142,10 +147,13 @@
                     <p class="text-gray-500 animate-pulse">Loading data, please wait...</p>
                 </div>
             </div>
+
+            <!-- Issue container -->
             <div id="issue-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             </div>
-        </div>
+        </section>
     </main>
+    
     <!-- details-modal -->
     <dialog id="details_modal" class="modal">
         <div class="modal-box w-11/12 max-w-3xl border-t-8 border-primary rounded-2xl" id="modal-body">

@@ -59,7 +59,7 @@ function displayIssuesToUI(issuesArray) {
         const issueCard = document.createElement('div');
         
         issueCard.className = `card bg-white shadow-md hover:shadow-2xl transition-all border-t-4 ${borderColorClass} cursor-pointer p-5 h-full`;
-
+         //Dynamically placing content inside all card
 const cardContent = `
             <div onclick="showIssueDetails('${singleIssue.id}')">
             <div class="text-right mb-4">
