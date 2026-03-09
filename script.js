@@ -46,7 +46,7 @@ function displayIssuesToUI(issuesArray) {
     container.innerHTML = "";
 
     issuesArray.forEach(function(singleIssue) {
-        
+
         let borderColorClass = "";
         const statusText = singleIssue.status.toLowerCase();
         
@@ -146,8 +146,16 @@ async function showIssueDetails(issueId) {
     const response = await fetch(detailUrl);
     const result = await response.json();
     const info = result.data;
-
+    
     const modalBox = document.getElementById('modal-body');
+    const statusText = info.status.toLowerCase();
+    modalBox.classList.remove('border-green-500', 'border-purple-500');
+    
+    if (statusText === 'open') {
+        modalBox.classList.add('border-green-500');
+    } else {
+        modalBox.classList.add('border-purple-500');
+    }
 
     //Dynamically placing content inside a modal
     modalBox.innerHTML = `
@@ -157,7 +165,7 @@ async function showIssueDetails(issueId) {
         </div>
         
         <div class="flex gap-1">
-        <p class="bg-green-500 px-1 rounded-xl">${info.status}ed</p>
+        <p class="bg-green-500 px-1 rounded-xl">${info.status}</p>
         <p>🟣 Opened by ${info.author}</p>
         <p>🟣 ${new Date(info.createdAt).toLocaleString()}</p>
         </div>
